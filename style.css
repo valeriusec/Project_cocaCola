@@ -1,0 +1,505 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: cocaCola;
+    src: url(/FONT/LOKICOLA.TTF);
+}
+
+body {
+    transition: all 1s;
+}
+
+#x_button {
+    position: fixed;
+    top: 50px;
+    right: 50px;
+    font-family: 'Russo One', sans-serif;
+    color: white;
+    font-size: 40px;
+    display: none;
+    cursor: pointer;
+   transition: font-size 500ms;
+}
+
+#x_button:hover {
+   font-size: 44px;
+   transition: font-size 500ms; 
+}
+
+/*HEADER SECTION CSS*/
+
+header {
+    width: 100%;
+    height: 100vh;
+}
+
+header #banner {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(
+        135deg,
+        #ff8300 0% 33%,
+        #fe001a 33% 66%,
+        #008B47 66% 99% 
+    );
+    z-index: -1;
+    transition: background-image 1s;
+}
+
+#banner::after {
+    content: '\A';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    background-image: url(/IMG/raindrops.png);
+    transition: opacity 400ms ease-out;
+    opacity: var(--bannerAfterOpacity, 0%);
+}
+
+#banner::before {
+    content: '\A';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-image: url(/IMG/ice.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: opacity 400ms ease-out;
+    opacity: var(--bannerBeforeOpacity, 50%);
+}
+
+header #banner #img_container {
+    width: 80%;
+    height: 60%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    transition: all 1s;
+}
+
+#img_container::after {
+    content: '\A';
+    position: absolute;
+    z-index: 0;
+    width: 80%;
+    height: 60%;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    display: var(--imgContainerAfter, none);
+    transition: display 1s 1.2s;
+}
+
+
+header #banner #img_container img {
+    height: 100%;
+}
+
+#cocacola {
+    height: 110%;
+    z-index: 2;
+    transition: all 1s ease;
+}
+
+#sprite {
+    position: relative;
+    right: 50px;
+    rotate: 10deg;
+    z-index: 1;
+    transition: all 1s ease;
+}
+
+#fanta {
+    position: relative;
+    left: 50px;
+    rotate: -10deg;
+    z-index: 1;
+    transition: all 1s ease;
+}
+
+
+#fanta_text_banner {
+    text-align: center;
+    width: 35%;
+    height: 100%;
+    font-size: 40px;
+    padding: 20px;
+    color: white;
+    z-index: 1;
+    font-family: 'Russo One', sans-serif;
+    background: rgba(150, 10, 10, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    display: var(--fantaText, none);
+    transition: display 1s 1.2s;
+}
+
+#cocacola_text_banner {
+    text-align: center;
+    width: 35%;
+    height: 100%;
+    font-size: 40px;
+    padding: 20px;
+    color: white;
+    z-index: 1;
+    font-family: 'Russo One', sans-serif;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    display: var(--cocacolaText, none);
+    transition: display 1s 1.2s;
+}
+
+#cocacola_text_banner2 {
+    text-align: center;
+    width: 35%;
+    height: 100%;
+    font-size: 40px;
+    padding: 20px;
+    color: white;
+    z-index: 1;
+    font-family: 'Russo One', sans-serif;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    display: var(--cocacolaText, none);
+    transition: display 1s 1.2s;
+}
+
+#sprite_text_banner {
+    text-align: center;
+    width: 35%;
+    height: 100%;
+    font-size: 40px;
+    padding: 20px;
+    color: white;
+    z-index: 1;
+    font-family: 'Russo One', sans-serif;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    display: var(--spriteText, none);
+    transition: display 1s 1.2s;
+}
+
+#cocacola:hover, #fanta:hover, #sprite:hover {
+    cursor: pointer;
+    scale: 1.10;
+    transition: all 1s ease;
+}
+
+#title {
+    text-align: center;
+    cursor: default;
+    position: absolute;
+    margin-top: 20px;
+    left: 50%;
+    transform: translate(-50%, 0%);    
+    color: whitesmoke;
+    font-size: 70px;
+    font-family: 'Russo One', 'sans-serif';
+    z-index: 1;
+}
+
+#title span {
+    font-family: 'cocaCola';
+    font-size: 90px;
+    letter-spacing: 0.4rem;
+}
+
+/*MAIN SECTION CSS*/
+
+#fanta_main {
+    width: 100%;
+    height: 100vh;
+    z-index: 0;
+    background-color: #ff8300;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+#fanta_main::after {
+    content: '\A';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url(/IMG/raindrops.png);
+    opacity: 1;
+    z-index: 0;
+}
+
+#cocacola_main {
+    width: 100%;
+    height: 100vh;
+    background-color: #fe001a;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+#cocacola_main::after {
+    content: '\A';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url(/IMG/raindrops.png);
+    opacity: 1;
+}
+
+#sprite_main {
+    width: 100%;
+    height: 100vh;
+    background-color: #008B47;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+#sprite_main::after {
+    content: '\A';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url(/IMG/raindrops.png);
+    opacity: 1;
+}
+
+.main_container {
+    width: 80%;
+    height: 60%;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-around;
+    align-items: center;
+    transition: all 1s;
+    z-index: 2;
+}
+
+.main_container::after {
+    content: '\A';
+    position: absolute;
+    z-index: 1;
+    width: 80%;
+    height: 60%;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(0.1px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+#fanta_main_img_container {
+    height: 90%;
+    background-color: rgb(2, 2, 95);
+    width: 33%;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+}
+
+#fanta_main_img_container img {
+    height: 105%;
+    z-index: 2;
+}
+
+#fanta_main_text {
+    width: 33%;
+    height: 100%;
+    padding: 30px;
+    z-index: 2;
+    font-family: 'Russo One', sans-serif;
+    font-size: 26px;
+    color: white;
+    background: rgba(150, 10, 10, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+#cocacola_main_img_container {
+    height: 90%;
+    background-color: red;
+    width: 33%;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+}
+
+#cocacola_main_img_container img {
+    height: 105%;
+    z-index: 2;
+}
+
+#cocacola_main_text {
+    width: 33%;
+    height: 100%;
+    padding: 30px;
+    z-index: 2;
+    font-family: 'Russo One', sans-serif;
+    font-size: 26px;
+    color: white;
+    background: rgba(150, 10, 10, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+#sprite_main_img_container {
+    height: 90%;
+    background-color: green;
+    width: 33%;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+}
+
+#sprite_main_img_container img {
+    height: 105%;
+    z-index: 2;
+}
+
+#sprite_main_text {
+    width: 33%;
+    height: 100%;
+    padding: 30px;
+    z-index: 2;
+    font-family: 'Russo One', sans-serif;
+    font-size: 26px;
+    color: white;
+    background: rgba(150, 10, 10, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/*SHOP SECTION CSS*/
+
+#shop_section {
+    width: 100%;
+    height: 100vh;
+    display: none;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#shop_section::after {
+    content: '\A';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url(/IMG/raindrops.png);
+    opacity: 1;
+}
+
+.shop_card {
+    width: 28%;
+    height: 80%;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(0.1px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+}
+
+.container_shop {
+    width: 100%;
+    height: 50%;
+    display:flex;
+    justify-content: center;
+}
+
+.info {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    cursor: default;
+}
+
+.info h2 {
+    font-family: 'Russo One', sans-serif;
+    color: whitesmoke;
+    font-size: 30px;
+}
+
+.info h4 {
+    margin: 20px 0px;
+    color: whitesmoke;
+    font-family: 'Russo One', sans-serif;
+    text-decoration: underline;
+}
+
+.ingredients_info {
+    width: 80%;
+    height: 40%;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(0.1px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.shop_button {
+    width: 50%;
+    height: 10%;
+    border-radius: 26px;
+    border: none;
+    margin: auto 0;
+    font-family: 'Russo One', sans-serif;
+    font-size: 24px;
+    cursor: pointer;
+}
